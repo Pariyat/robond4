@@ -1,0 +1,8 @@
+prefix=/home/robond/robo-nd-ws/Project2/devel
+
+Name: ball_chaser
+Description: Description of ball_chaser
+Version: 0.0.0
+Cflags: -I/home/robond/robo-nd-ws/Project2/devel/include
+Libs: -L/home/robond/robo-nd-ws/Project2/devel/lib 
+Requires: 

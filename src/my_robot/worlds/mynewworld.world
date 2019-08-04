@@ -1871,7 +1871,7 @@
       </link>
       <pose frame=''>-0.987712 -2.49658 0 0 -0 0</pose>
     </model>
-    <model name='my_robot'>
+    <model name='my_new_robot'>
       <link name='robot_footprint'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <inertial>

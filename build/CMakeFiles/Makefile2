@@ -1125,7 +1125,7 @@ clean: ball_chaser/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
 # Target rules for target ball_chaser/CMakeFiles/process_image.dir
 
 # All Build rule for target.
-ball_chaser/CMakeFiles/process_image.dir/all:
+ball_chaser/CMakeFiles/process_image.dir/all: ball_chaser/CMakeFiles/ball_chaser_generate_messages_cpp.dir/all
 	$(MAKE) -f ball_chaser/CMakeFiles/process_image.dir/build.make ball_chaser/CMakeFiles/process_image.dir/depend
 	$(MAKE) -f ball_chaser/CMakeFiles/process_image.dir/build.make ball_chaser/CMakeFiles/process_image.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/robond/robo-nd-ws/Project2/build/CMakeFiles --progress-num=14,15 "Built target process_image"
@@ -1138,7 +1138,7 @@ all: ball_chaser/CMakeFiles/process_image.dir/all
 
 # Build rule for subdir invocation for target.
 ball_chaser/CMakeFiles/process_image.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/robond/robo-nd-ws/Project2/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/robond/robo-nd-ws/Project2/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 ball_chaser/CMakeFiles/process_image.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/robond/robo-nd-ws/Project2/build/CMakeFiles 0
 .PHONY : ball_chaser/CMakeFiles/process_image.dir/rule

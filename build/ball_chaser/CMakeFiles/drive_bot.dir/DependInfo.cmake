@@ -18,9 +18,9 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/robond/robo-nd-ws/Project2/devel/include"
+  "/home/robond/robo-nd-ws/Project2/src/ball_chaser/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
-  "/home/robond/robo-nd-ws/Project2/src/ball_chaser/include"
   )
 
 # Targets to which this target links.

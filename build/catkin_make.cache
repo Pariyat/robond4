@@ -1,2 +1,0 @@
-ball_chaser:my_robot
--DCATKIN_DEVEL_PREFIX=/home/robond/robo-nd-ws/Project2/devel -DCMAKE_INSTALL_PREFIX=/home/robond/robo-nd-ws/Project2/install -G Unix Makefiles

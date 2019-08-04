@@ -29,67 +29,45 @@ void drive_robot(float lin_x, float ang_z)
 void process_image_callback(const sensor_msgs::Image img)
 {
 
-    	int white_pixel = 255;
+    int white_pixel = 255;
 
     // TODO: Loop through each pixel in the image and check if there's a bright white one
     // Then, identify if this pixel falls in the left, mid, or right side of the image
     // Depending on the white ball position, call the drive_bot function and pass velocities to it
     // Request a stop when there's no white ball seen by the camera
-	
-	bool found_ball = false;
-	
-	int row = 0;
-	int step = 0;
-	int i = 0;
+    
+    
+    float x = 0.0;
+    float z = 0.0;
+  
+    float offset_accumulated = 0;
+    int count_total = 0;
+  
+    for (int i = 0; i < img.height ; i++) {
+        for (int j = 0; j < img.step; j++) {
+            if (img.data[i * img.step + j] == white_pixel) {
+                // vec_cout[j]++;
+                offset_accumulated += j -  img.step/ 2.0;
+                count_total++;
+            }
+        }
+    }
 
-	//int height = img.height;
-    	//int step = img.step;
 
-    	float x = 0.0;
-    	float z = 0.0;
-  	
-	for (row = 0; row < img.height && found_ball == false; row++)
-    	{
-        	for (step = 0; step < img.step && found_ball == false; ++step)
-        	{   
-            		i = (row*img.step)+step;
-            		//ROS_INFO("row: %d, step: %d, i: %d", row, step, i);
-            		if (img.data[i] == white_pixel && img.data[i + 1] == white_pixel && img.data[i + 2] == white_pixel)
-			{   
-				found_ball = true;
-				//ROS_INFO("row: %d, step: %d, i: %d", row, step, i);
-				
-			 }
-		}
-    	}	
+    // If no pixel found, then tell the car to stop
+    if (count_total == 0) {
+        x = 0.0;
+        z = 0.0;
+    }
+    else {
+        x = 0.1;
+        // z = 0.5 * (step / 2.0 - idx_center_ball);
 
-    	 if (found_ball)
-    	{
-        // Then, identify if this pixel falls in the left, mid, or right side of the image
-        	int imgThird = img.width/3;
-        	int col = step/3;
-        //ROS_INFO("col: %d", col);
-        	if (col < imgThird) 
-        	{
-        	    drive_robot(0.0, -0.5);
-            //ROS_INFO("LEFT");
-        	} 
-        	else if (col >= imgThird && col < 2*imgThird)
-        	{
-        	    drive_robot(0.5, 0.0);
-            //ROS_INFO("MID");
-        	}
-        	else if (col >= 2*imgThird)
-        	{
-            	drive_robot(0.1, 0.5);
-            //ROS_INFO("RIGHT");
-        	}
-        // Depending on the white ball position, call the drive_bot function and pass velocities to it
-    	}
-	else
-	{
-		drive_robot(x, z);
-	}
+        z = -4.0 * offset_accumulated / count_total / (img.step /2.0);
+    }
+    
+    // Send request to service
+    drive_robot(x, z);
 }
 
 int main(int argc, char** argv)

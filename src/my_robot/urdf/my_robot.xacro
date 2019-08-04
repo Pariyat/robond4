@@ -223,6 +223,10 @@
     <material>Gazebo/Red</material>
   </gazebo>
 
+  <gazebo reference="camera">
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+
 
 </robot>
 

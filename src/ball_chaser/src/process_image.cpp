@@ -54,7 +54,7 @@ void process_image_callback(const sensor_msgs::Image img)
         	{   
             		i = (row*img.step)+step;
             		//ROS_INFO("row: %d, step: %d, i: %d", row, step, i);
-            		if (img.data[i] == white_pixel)
+            		if (img.data[i] == white_pixel && img.data[i + 1] == white_pixel && img.data[i + 2] == white_pixel)
 			{   
 				found_ball = true;
 				//ROS_INFO("row: %d, step: %d, i: %d", row, step, i);
@@ -71,7 +71,7 @@ void process_image_callback(const sensor_msgs::Image img)
         //ROS_INFO("col: %d", col);
         	if (col < imgThird) 
         	{
-        	    drive_robot(0.1, 0.1);
+        	    drive_robot(0.0, -0.5);
             //ROS_INFO("LEFT");
         	} 
         	else if (col >= imgThird && col < 2*imgThird)
@@ -81,7 +81,7 @@ void process_image_callback(const sensor_msgs::Image img)
         	}
         	else if (col >= 2*imgThird)
         	{
-            	drive_robot(0.1, -0.1);
+            	drive_robot(0.1, 0.5);
             //ROS_INFO("RIGHT");
         	}
         // Depending on the white ball position, call the drive_bot function and pass velocities to it

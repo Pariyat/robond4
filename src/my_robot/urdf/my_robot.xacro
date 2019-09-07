@@ -178,12 +178,6 @@
   </joint>
 
 
-  <joint name="hokuyo_joint" type="fixed">
-    <axis xyz="0 1 0" />
-    <origin xyz=".15 0 .1" rpy="0 0 0"/>
-    <parent link="chassis"/>
-    <child link="hokuyo"/>
-  </joint>
 
   <!-- Hokuyo Laser -->
   <link name="hokuyo">
@@ -216,13 +210,17 @@
   </joint>
 
   <gazebo reference="left_wheel">
-    <material>Gazebo/Blue</material>
+    <material>Gazebo/Red</material>
   </gazebo>
 
   <gazebo reference="right_wheel">
     <material>Gazebo/Red</material>
   </gazebo>
 
+  <gazebo reference="chassis">
+    <material>Gazebo/Green</material>
+  </gazebo>
+	
   <gazebo reference="camera">
     <material>Gazebo/Yellow</material>
   </gazebo>

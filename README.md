@@ -1,4 +1,4 @@
-# Udacity Robotics Nanodegree Project #3: Map My World Robot
+# Udacity Robotics Nanodegree Project #4: Map My World Robot
 
 
 ## Getting Started
@@ -27,3 +27,4 @@ To open our mapping database, we can do this like so:
 ```
 rtabmap-databaseViewer ~/.ros/rtabmap.db
 ```
+

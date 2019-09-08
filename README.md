@@ -1,6 +1,6 @@
 # Udacity Robotics Nanodegree Project #3: Where Am I?
 
-![Screenshot](img.png)
+![Screenshot](image.png)
 
 ## Introduction
 This is a project for Udacity's Robotics NanoDegree. It's a robot that uses a Hokuyo laser scanner and Monte Carlo Localization to localize itself inside a simulated environment.

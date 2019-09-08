@@ -27,4 +27,6 @@ To open our mapping database, we can do this like so:
 ```
 rtabmap-databaseViewer ~/.ros/rtabmap.db
 ```
+### Rtabmap DB URL
+[Click Here To Download](https://drive.google.com/file/d/1vjWhU6h8za7jaLJJIDYRco9DaJoPO78Q/view?usp=sharing)
 

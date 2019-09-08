@@ -168,7 +168,7 @@
       <box_inertia m="${cameraMass}" x="${cameraSize}" y="${cameraSize}" z="${cameraSize}" />
       <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
     </inertial>
-  </link>
+</link>
 
   <joint name="camera_joint" type="fixed">
     <axis xyz="0 1 0" />
@@ -176,6 +176,17 @@
     <parent link="chassis"/>
     <child link="camera"/>
   </joint>
+
+
+  <link name="camera_rgbd_frame"></link>
+
+  <joint name="camera_rgbd_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-${pi/2} 0 -${pi/2}"/>
+    <parent link="camera"/>
+    <child link="camera_rgbd_frame"/>
+  </joint>
+
+
 
 
 
